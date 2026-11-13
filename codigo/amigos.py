@@ -116,12 +116,13 @@ def pipa(c, look=(0, 0)):
     cheeks(c, 88, 25)
 
 # ---------------- Tomi la tortuguita ----------------
-def tomi(c, look=(0, 0)):
+def tomi(c, look=(0, 0), shell=True):
     GREEN, SHELL, SHELL2 = hexc('#7CCB5B'), hexc('#8D6E63'), hexc('#BCAAA4')
     # shell behind the head
-    ellipse(c, 0, 55, 205, 105); fill(c, SHELL, OUT, 6)
-    for (hx, hy) in ((-135, 55), (135, 55), (-60, 115), (60, 115)):
-        ellipse(c, hx, hy, 42, 30); c.set_source_rgba(*SHELL2); c.fill()
+    if shell:
+        ellipse(c, 0, 55, 205, 105); fill(c, SHELL, OUT, 6)
+        for (hx, hy) in ((-135, 55), (135, 55), (-60, 115), (60, 115)):
+            ellipse(c, hx, hy, 42, 30); c.set_source_rgba(*SHELL2); c.fill()
     ellipse(c, 0, -10, 125, 118); fill(c, GREEN, OUT, 6)
     for ex in (-48, 48): eye(c, ex, -25, 32, 40, look)
     for nx in (-12, 12): ellipse(c, nx, 25, 5, 6); fill(c, OUT)

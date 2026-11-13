@@ -69,7 +69,7 @@ def _coco_mouth(c, mood, chew=0.0):
         c.arc(0, 50, 30, 0.25 * math.pi, 0.75 * math.pi); c.stroke()
 
 def coco(c, t=0.0, look=(0, 0), lid=0.0, mood='smile', sad=0.0, arm_r=1.13, arm_l=2.0,
-         walk=0.0, head_tilt=0.0, hold=None, chew=0.0):
+         walk=0.0, head_tilt=0.0, hold=None, chew=0.0, arm_len=115):
     """walk: fase de caminata (0 = quieto). arm_r / arm_l: ángulo en radianes desde el hombro.
     hold: None | 'banana' | 'bunch' (en la mano derecha)."""
     tw = math.sin(t * 2.2)
@@ -97,8 +97,8 @@ def coco(c, t=0.0, look=(0, 0), lid=0.0, mood='smile', sad=0.0, arm_r=1.13, arm_
     _coco_mouth(c, mood, chew)
     A.cheeks(c)
     c.restore()
-    _arm(c, -78, -180, arm_l)
-    hx, hy = _arm(c, 78, -180, arm_r)
+    _arm(c, -78, -180, arm_l, arm_len)
+    hx, hy = _arm(c, 78, -180, arm_r, arm_len)
     if hold == 'banana': banana(c, hx + 15, hy - 30, 1.7, -0.6)
     elif hold == 'bunch': bunch(c, hx, hy - 10, 1.4)
 
@@ -164,8 +164,33 @@ def pipa(c, t=0.0, look=(0, 0), neck=300, lean=0.0, walk=0.0, hold=None):
     return hx, hy
 
 # ---------------- Tomi ----------------
-def tomi(c, t=0.0, look=(0, 0), walk=0.0, hold=None):
+def tomi_shell(c):
+    """Tomi escondido: solo se ve el caparazón (parece una piedra)."""
+    c.move_to(-200, -20); c.curve_to(-200, -250, 200, -250, 200, -20); c.close_path()
+    fill(c, hexc('#8D6E63'), OUT, 6)
+    c.save(); c.move_to(-200, -20); c.curve_to(-200, -250, 200, -250, 200, -20); c.close_path(); c.clip()
+    for (hx, hy) in ((-110, -60), (0, -140), (110, -60), (0, -40), (-70, -150), (70, -150)):
+        ellipse(c, hx, hy, 46, 34); c.set_source_rgba(*hexc('#BCAAA4')); c.fill()
+    c.restore()
+    c.rectangle(-205, -30, 410, 26); fill(c, hexc('#6D4C41'), OUT, 5)
+
+def tomi(c, t=0.0, look=(0, 0), walk=0.0, hold=None, hide=0.0, lid=0.0, mood='smile'):
+    """hide: 0 = afuera, 1 = escondido en el caparazón. lid/mood sirven al despertarse."""
     G = hexc('#7CCB5B')
+    if hide > 0:
+        tomi_shell(c)
+        c.save(); c.rectangle(-300, -600, 600, 590); c.clip()
+        c.translate(0, -165 + 300 * hide); A.tomi(c, look, shell=False)
+        if lid > 0:
+            for ex in (-48, 48):
+                c.save(); ellipse(c, ex, -25, 32, 40); c.clip()
+                c.rectangle(ex - 40, -70, 80, 84 * lid); c.set_source_rgba(*hexc('#6DB84E')); c.fill(); c.restore()
+                c.move_to(ex - 32, -67 + 84 * lid); c.line_to(ex + 32, -67 + 84 * lid)
+                c.set_source_rgba(*OUT); c.set_line_width(5); c.stroke()
+        if mood == 'o':
+            ellipse(c, 0, 70, 26, 34); fill(c, hexc('#B71C1C'), OUT, 5)
+        c.restore()
+        return
     for k, (fx, fy) in enumerate(((-150, -12), (150, -12), (-70, -6), (70, -6))):
         lift = max(0.0, math.sin(walk + k * math.pi / 2)) * 10 if walk else 0
         ellipse(c, fx, fy - lift, 34, 20); fill(c, G, OUT, 5)

@@ -6,7 +6,7 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 ## Reglas de estilo (no cambiar sin que Gino lo pida)
 - Estilo plano tipo dibujito infantil: formas redondas, contorno marrón oscuro `#3B2314` de ~6 px, colores vivos, cachetes rosados.
 - Personajes SIEMPRE desde `codigo/amigos.py` (cabezas) o el cuerpo de Coco en `escena_noche.py` / `ep01_...py`. Nunca redibujarlos de cero: así se ven iguales en todos los videos.
-- Cuerpos completos (para historias): `codigo/cuerpos.py` (`K.put(c, K.coco, x, y, escala, ...)`). Coco tiene expresiones (`mood`: smile, closed, sad, o, chew), Tito estira la trompa (`reach`), Pipa estira el cuello (`neck`), Lola aletea (`flap`).
+- Cuerpos completos (para historias): `codigo/cuerpos.py` (`K.put(c, K.coco, x, y, escala, ...)`). Coco tiene expresiones (`mood`: smile, closed, sad, o, chew), Tito estira la trompa (`reach`), Pipa estira el cuello (`neck`), Lola aletea (`flap`), Tomi se esconde en el caparazón (`hide` 0–1), Coco puede estirar los brazos (`arm_len`, p. ej. para taparse los ojos).
 - Personajes nuevos: agregarlos a `amigos.py` con el mismo estilo y sumarlos a `ALL` y `COLORS`.
 - Música: siempre original o de dominio público. Nada de personajes, canciones o marcas con copyright (no imitar Peppa Pig ni otros).
 - Historias cortitas, movimientos suaves, pensadas para ver muchas veces.
@@ -22,6 +22,9 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 | Tito | elefantito | grandote, tierno, tímido | `#8FB8E8` |
 | Pipa | jirafita | alta, ve todo desde arriba y avisa | `#FFCF40` |
 | Tomi | tortuguita | lenta y sabia, siempre llega | `#7CCB5B` |
+
+## Entregables de cada episodio
+Video para YouTube (intro + episodio), short vertical 1080×1920 de ≤60 s (`epXX_extras.py short`), miniatura 1280×720 (`epXX_extras.py miniatura`), y título/descripción/etiquetas.
 
 ## Tipos de video
 - **Aventuritas** (2–3 min): historias cortas (cruzar el bosque, el puente del río, la lluvia…).

@@ -73,9 +73,9 @@ def lola(c, look=(0, 0)):
     cheeks(c, 95, 50, '#FF8A80')
 
 # ---------------- Tito el elefantito ----------------
-def tito(c, look=(0, 0), trunk=True):
+def tito(c, look=(0, 0), trunk=True, ears=True):
     BLUE, PINK = hexc('#8FB8E8'), hexc('#F8BBD0')
-    for ex in (-1, 1):
+    for ex in ((-1, 1) if ears else ()):
         c.save(); c.scale(ex, 1)
         c.move_to(90, -80); c.curve_to(260, -150, 290, 80, 100, 70); c.close_path(); fill(c, BLUE, OUT, 6)
         c.move_to(110, -50); c.curve_to(230, -100, 245, 50, 115, 40); c.close_path(); fill(c, PINK)

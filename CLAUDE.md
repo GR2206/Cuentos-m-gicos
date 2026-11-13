@@ -6,7 +6,7 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 ## Reglas de estilo (no cambiar sin que Gino lo pida)
 - Estilo plano tipo dibujito infantil: formas redondas, contorno marrón oscuro `#3B2314` de ~6 px, colores vivos, cachetes rosados.
 - Personajes SIEMPRE desde `codigo/amigos.py` (cabezas) o el cuerpo de Coco en `escena_noche.py` / `ep01_...py`. Nunca redibujarlos de cero: así se ven iguales en todos los videos.
-- Cuerpos completos (para historias): `codigo/cuerpos.py` (`K.put(c, K.coco, x, y, escala, ...)`). Coco tiene expresiones (`mood`: smile, closed, sad, o, chew), Tito estira la trompa (`reach`), Pipa estira el cuello (`neck`), Lola aletea (`flap`), Tomi se esconde en el caparazón (`hide` 0–1), Coco puede estirar los brazos (`arm_len`, p. ej. para taparse los ojos).
+- Cuerpos completos (para historias): `codigo/cuerpos.py` (`K.put(c, K.coco, x, y, escala, ...)`). Coco tiene expresiones (`mood`: smile, closed, sad, o, chew), Tito estira la trompa (`reach`), Pipa estira el cuello (`neck`), Lola aletea (`flap`), Tomi se esconde en el caparazón (`hide` 0–1), Tito abre las orejas como paraguas (`umbrella` 0–1), Coco puede estirar los brazos (`arm_len`, p. ej. para taparse los ojos).
 - Personajes nuevos: agregarlos a `amigos.py` con el mismo estilo y sumarlos a `ALL` y `COLORS`.
 - Música: siempre original o de dominio público. Nada de personajes, canciones o marcas con copyright (no imitar Peppa Pig ni otros).
 - Historias cortitas, movimientos suaves, pensadas para ver muchas veces.

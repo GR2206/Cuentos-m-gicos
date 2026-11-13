@@ -107,7 +107,24 @@ TITO_BLUE = hexc('#8FB8E8')
 def tito_trunk_tip(reach):
     return (reach, -60)
 
-def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None):
+def tito_big_ears(c, u, t=0.0):
+    """Orejas abiertas como paraguas (u de 0 a 1), en coordenadas de la cabeza."""
+    PINK = hexc('#F8BBD0')
+    flap = 0.03 * math.sin(t * 3)
+    for s in (-1, 1):
+        c.save(); c.scale(s, 1); c.rotate(-flap)
+        ox, oy = 90, -60
+        c.move_to(ox, oy - 30)
+        c.curve_to(ox + 120 + 120 * u, oy - 150 - 120 * u, ox + 330 + 260 * u, oy - 140 - 120 * u, ox + 330 + 330 * u, oy + 60 - 140 * u)
+        c.curve_to(ox + 260 + 220 * u, oy + 140 - 120 * u, ox + 100, oy + 150 - 30 * u, ox + 10, oy + 120)
+        c.close_path(); fill(c, TITO_BLUE, OUT, 6)
+        c.move_to(ox + 25, oy - 5)
+        c.curve_to(ox + 120 + 100 * u, oy - 110 - 100 * u, ox + 290 + 220 * u, oy - 100 - 100 * u, ox + 290 + 280 * u, oy + 50 - 120 * u)
+        c.curve_to(ox + 230 + 180 * u, oy + 110 - 100 * u, ox + 100, oy + 115 - 30 * u, ox + 30, oy + 95)
+        c.close_path(); fill(c, PINK)
+        c.restore()
+
+def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None, umbrella=0.0):
     """reach: largo de la trompa hacia la derecha en unidades locales (None = trompa normal)."""
     for k, lx in enumerate((-75, 75)):
         lift = max(0.0, math.sin(walk + k * math.pi)) * 18 if walk else 0
@@ -116,7 +133,9 @@ def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None):
         for nx in (-18, 0, 18):
             ellipse(c, lx + nx, -12 - lift, 8, 6); fill(c, (1, 1, 1, 1))
     ellipse(c, 0, -175, 160, 115); fill(c, TITO_BLUE, OUT, 6)
-    c.save(); c.translate(0, -340); A.tito(c, look, trunk=False); c.restore()
+    c.save(); c.translate(0, -340)
+    if umbrella > 0: tito_big_ears(c, umbrella, t)
+    A.tito(c, look, trunk=False, ears=umbrella <= 0); c.restore()
     # trunk
     end = 150 if reach is None else max(150, reach)
     c.set_line_cap(cairo.LINE_CAP_ROUND)

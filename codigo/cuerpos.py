@@ -102,6 +102,22 @@ def coco(c, t=0.0, look=(0, 0), lid=0.0, mood='smile', sad=0.0, arm_r=1.13, arm_
     if hold == 'banana': banana(c, hx + 15, hy - 30, 1.7, -0.6)
     elif hold == 'bunch': bunch(c, hx, hy - 10, 1.4)
 
+def lids(c, eyes, lid, skin):
+    """Párpados sobre ojos de amigos.py. eyes = [(x, y, rx, ry), ...] en coordenadas de la cabeza."""
+    if lid <= 0.01: return
+    for (ex, ey, rx, ry) in eyes:
+        if lid > 0.9:
+            ellipse(c, ex, ey, rx + 3, ry + 3); c.set_source_rgba(*skin); c.fill()
+            c.set_source_rgba(*OUT); c.set_line_width(7); c.set_line_cap(cairo.LINE_CAP_ROUND)
+            c.arc(ex, ey - 4, rx * 0.75, 0.15 * math.pi, 0.85 * math.pi); c.stroke()
+            continue
+        c.save(); ellipse(c, ex, ey, rx, ry); c.clip()
+        yb = ey - ry + 2 * ry * lid
+        c.rectangle(ex - rx - 4, ey - ry - 4, 2 * rx + 8, yb - (ey - ry) + 4); c.set_source_rgba(*skin); c.fill()
+        c.move_to(ex - rx - 4, yb); c.line_to(ex + rx + 4, yb); c.set_source_rgba(*OUT); c.set_line_width(6); c.stroke()
+        c.restore()
+        ellipse(c, ex, ey, rx, ry); c.set_source_rgba(*OUT); c.set_line_width(5); c.stroke()
+
 # ---------------- Tito ----------------
 TITO_BLUE = hexc('#8FB8E8')
 def tito_trunk_tip(reach):
@@ -124,7 +140,7 @@ def tito_big_ears(c, u, t=0.0):
         c.close_path(); fill(c, PINK)
         c.restore()
 
-def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None, umbrella=0.0):
+def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None, umbrella=0.0, lid=0.0, yawn=0.0):
     """reach: largo de la trompa hacia la derecha en unidades locales (None = trompa normal)."""
     for k, lx in enumerate((-75, 75)):
         lift = max(0.0, math.sin(walk + k * math.pi)) * 18 if walk else 0
@@ -135,7 +151,11 @@ def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None, umbrella=0.0):
     ellipse(c, 0, -175, 160, 115); fill(c, TITO_BLUE, OUT, 6)
     c.save(); c.translate(0, -340)
     if umbrella > 0: tito_big_ears(c, umbrella, t)
-    A.tito(c, look, trunk=False, ears=umbrella <= 0); c.restore()
+    A.tito(c, look, trunk=False, ears=umbrella <= 0)
+    lids(c, [(-50, -25, 30, 38), (50, -25, 30, 38)], lid, hexc('#88B2E5'))
+    if yawn > 0.02:
+        ellipse(c, -55, 62, 14 + 8 * yawn, 8 + 22 * yawn); fill(c, hexc('#B71C1C'), OUT, 5)
+    c.restore()
     # trunk
     end = 150 if reach is None else max(150, reach)
     c.set_line_cap(cairo.LINE_CAP_ROUND)
@@ -217,7 +237,7 @@ def tomi(c, t=0.0, look=(0, 0), walk=0.0, hold=None, hide=0.0, lid=0.0, mood='sm
     if hold == 'banana': banana(c, 110, -100, 1.5, -0.3)
 
 # ---------------- Lola ----------------
-def lola(c, t=0.0, look=(0, 0), flap=None, hold=None):
+def lola(c, t=0.0, look=(0, 0), flap=None, hold=None, lid=0.0):
     """flap: velocidad de aleteo (None = alas quietas)."""
     RED = hexc('#E53935')
     for k, (col, a) in enumerate((('#1E88E5', -0.3), ('#FDD835', 0.0), ('#E53935', 0.3))):
@@ -235,7 +255,8 @@ def lola(c, t=0.0, look=(0, 0), flap=None, hold=None):
     for fx in (-22, 22):
         c.set_source_rgba(*hexc('#FF9800')); c.set_line_width(10); c.set_line_cap(cairo.LINE_CAP_ROUND)
         c.move_to(fx, -25); c.line_to(fx, -5); c.stroke()
-    c.save(); c.translate(0, -230); c.scale(0.7, 0.7); A.lola(c, look); c.restore()
+    c.save(); c.translate(0, -230); c.scale(0.7, 0.7); A.lola(c, look)
+    lids(c, [(-52, -15, 28, 34), (52, -15, 28, 34)], lid, (1, 1, 1, 1)); c.restore()
     if hold == 'banana': banana(c, 90, -115, 1.6, -0.4)
 
 # ---------------- dibujar con posición y escala ----------------

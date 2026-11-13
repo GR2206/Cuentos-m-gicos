@@ -73,7 +73,7 @@ def lola(c, look=(0, 0)):
     cheeks(c, 95, 50, '#FF8A80')
 
 # ---------------- Tito el elefantito ----------------
-def tito(c, look=(0, 0)):
+def tito(c, look=(0, 0), trunk=True):
     BLUE, PINK = hexc('#8FB8E8'), hexc('#F8BBD0')
     for ex in (-1, 1):
         c.save(); c.scale(ex, 1)
@@ -82,13 +82,13 @@ def tito(c, look=(0, 0)):
         c.restore()
     ellipse(c, 0, 0, 135, 128); fill(c, BLUE, OUT, 6)
     for ex in (-50, 50): eye(c, ex, -25, 30, 38, look)
-    # trunk curling up
-    c.set_line_cap(cairo.LINE_CAP_ROUND)
-    tr = lambda: (c.move_to(0, 20), c.curve_to(0, 110, 50, 150, 85, 110))
-    tr(); c.set_source_rgba(*OUT); c.set_line_width(58); c.stroke()
-    tr(); c.set_source_rgba(*BLUE); c.set_line_width(46); c.stroke()
-    for k in (60, 85):
-        c.move_to(-18, k); c.line_to(18, k + 4); c.set_source_rgba(*OUT); c.set_line_width(4); c.stroke()
+    if trunk:  # trunk curling up
+        c.set_line_cap(cairo.LINE_CAP_ROUND)
+        tr = lambda: (c.move_to(0, 20), c.curve_to(0, 110, 50, 150, 85, 110))
+        tr(); c.set_source_rgba(*OUT); c.set_line_width(58); c.stroke()
+        tr(); c.set_source_rgba(*BLUE); c.set_line_width(46); c.stroke()
+        for k in (60, 85):
+            c.move_to(-18, k); c.line_to(18, k + 4); c.set_source_rgba(*OUT); c.set_line_width(4); c.stroke()
     c.set_line_width(7); c.set_source_rgba(*OUT)
     c.arc(-55, 55, 30, 0.2 * math.pi, 0.8 * math.pi); c.stroke()
     cheeks(c, 95, 35)
@@ -131,5 +131,5 @@ def tomi(c, look=(0, 0)):
 ALL = {'coco': coco, 'lola': lola, 'tito': tito, 'pipa': pipa, 'tomi': tomi}
 COLORS = {'coco': '#A0582C', 'lola': '#E53935', 'tito': '#5C8FD6', 'pipa': '#F08A24', 'tomi': '#4CAF50'}
 
-def draw(c, name, x, y, s=1.0, look=(0, 0), rot=0.0):
-    c.save(); c.translate(x, y); c.rotate(rot); c.scale(s, s); ALL[name](c, look); c.restore()
+def draw(c, name, x, y, s=1.0, look=(0, 0), rot=0.0, **kw):
+    c.save(); c.translate(x, y); c.rotate(rot); c.scale(s, s); ALL[name](c, look, **kw); c.restore()

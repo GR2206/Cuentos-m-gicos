@@ -19,6 +19,7 @@ Canal infantil de YouTube con historias cortitas de animales de la selva: Coco, 
 4. **La lluvia mágica** — `videos/ep04_lluvia_magica_youtube.mp4` (1 min 56 s, con intro). Llueve en la selva y Tito abre sus orejas como paraguas; después sale el arcoíris y saltan en los charcos. *Mensaje: después de la lluvia sale el sol.*
 5. **El cumpleaños de Tomi** — `videos/ep05_cumple_tomi_youtube.mp4` (1 min 56 s, con intro). Los amigos le preparan una fiesta sorpresa a Tomi con globos, banderines, torta de bananas y una canción original. *Mensaje: los amigos se acuerdan de vos.*
 6. **Tito se va a dormir** — 1 min 5 s con intro (el MP4 largo no está en GitHub: se genera con `codigo/ep06_tito_a_dormir.py`). Tito bosteza, Lola le canta y se duermen bajo una hoja. *Para la lista "A dormir con…"*
+7. **La estrella que se cayó** — 1 min 45 s con intro (`codigo/ep07_estrella.py`). Una estrellita bebé se cae a la selva; todos intentan devolverla y Lola la lleva volando. Agradece con un corazón de estrellas. *Para "A dormir con…"*
 
 ## Cómo seguir en un chat nuevo con Claude
 Pedile que trabaje con este repositorio (GR2206/Cuentos-m-gicos). El archivo `CLAUDE.md` le explica el estilo y los personajes, así todo sale igual.

@@ -99,8 +99,8 @@ def coco(c, t=0.0, look=(0, 0), lid=0.0, mood='smile', sad=0.0, arm_r=1.13, arm_
     c.restore()
     _arm(c, -78, -180, arm_l)
     hx, hy = _arm(c, 78, -180, arm_r)
-    if hold == 'banana': banana(c, hx + 10, hy - 20, 1.1, -0.6)
-    elif hold == 'bunch': bunch(c, hx, hy - 10, 0.9)
+    if hold == 'banana': banana(c, hx + 15, hy - 30, 1.7, -0.6)
+    elif hold == 'bunch': bunch(c, hx, hy - 10, 1.4)
 
 # ---------------- Tito ----------------
 TITO_BLUE = hexc('#8FB8E8')
@@ -131,7 +131,7 @@ def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None):
     while x < end - 20:
         c.move_to(x, -80); c.line_to(x + 4, -42); c.stroke(); x += 70
     tip = (end + 30, -115) if reach is None else (end, -60)
-    if hold == 'banana': banana(c, tip[0] + 10, tip[1] - 30, 1.1, -0.9)
+    if hold == 'banana': banana(c, tip[0] + 15, tip[1] - 40, 1.7, -0.9)
     return tip
 
 # ---------------- Pipa ----------------
@@ -160,7 +160,7 @@ def pipa(c, t=0.0, look=(0, 0), neck=300, lean=0.0, walk=0.0, hold=None):
         py = (1 - u) ** 3 * -250 + 3 * (1 - u) ** 2 * u * (-250 - neck * 0.5) + 3 * (1 - u) * u * u * (hy + neck * 0.3) + u ** 3 * (hy + 60)
         ellipse(c, px + (8 if k % 2 else -8), py, 12, 10); c.set_source_rgba(*P_SPOT); c.fill()
     c.save(); c.translate(hx, hy); c.scale(0.85, 0.85); A.pipa(c, look); c.restore()
-    if hold == 'banana': banana(c, hx + 20, hy + 120, 1.0, 0.3)
+    if hold == 'banana': banana(c, hx + 30, hy + 120, 1.6, 0.3)
     return hx, hy
 
 # ---------------- Tomi ----------------
@@ -170,7 +170,7 @@ def tomi(c, t=0.0, look=(0, 0), walk=0.0, hold=None):
         lift = max(0.0, math.sin(walk + k * math.pi / 2)) * 10 if walk else 0
         ellipse(c, fx, fy - lift, 34, 20); fill(c, G, OUT, 5)
     c.save(); c.translate(0, -150); A.tomi(c, look); c.restore()
-    if hold == 'banana': banana(c, 95, -95, 0.9, -0.3)
+    if hold == 'banana': banana(c, 110, -100, 1.5, -0.3)
 
 # ---------------- Lola ----------------
 def lola(c, t=0.0, look=(0, 0), flap=None, hold=None):
@@ -192,7 +192,7 @@ def lola(c, t=0.0, look=(0, 0), flap=None, hold=None):
         c.set_source_rgba(*hexc('#FF9800')); c.set_line_width(10); c.set_line_cap(cairo.LINE_CAP_ROUND)
         c.move_to(fx, -25); c.line_to(fx, -5); c.stroke()
     c.save(); c.translate(0, -230); c.scale(0.7, 0.7); A.lola(c, look); c.restore()
-    if hold == 'banana': banana(c, 70, -110, 0.9, -0.4)
+    if hold == 'banana': banana(c, 90, -115, 1.6, -0.4)
 
 # ---------------- dibujar con posición y escala ----------------
 SCALE = {'coco': 0.55, 'tito': 0.6, 'pipa': 0.55, 'tomi': 0.55, 'lola': 0.5}

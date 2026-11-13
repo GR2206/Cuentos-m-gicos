@@ -38,4 +38,10 @@ python3 ep01_coco_se_va_a_dormir.py | ffmpeg -y -f rawvideo -pix_fmt bgra -s 192
 ffmpeg -i video.mp4 -i sleep_music.wav -c:v copy -c:a aac -b:a 192k -shortest final.mp4
 ```
 Episodios largos: `python3 ep02_puente_del_rio.py range 0 63` renderiza solo un tramo (se pueden hacer dos tramos en paralelo y unirlos con el concat de ffmpeg).
+Versión final para YouTube (intro + episodio, una sola codificación):
+```
+ffmpeg -i ../videos/intro_canal.mp4 -i episodio.mp4 -filter_complex "[0:v][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]" \
+  -map "[v]" -map "[a]" -c:v libx264 -profile:v high -preset slow -crf 16 -g 15 -bf 2 -pix_fmt yuv420p \
+  -colorspace bt709 -color_primaries bt709 -color_trc bt709 -c:a aac -b:a 384k -ar 48000 -ac 2 -movflags +faststart final.mp4
+```
 `python3 <script>.py stills 2.5 10` guarda cuadros sueltos para revisar antes del render completo.

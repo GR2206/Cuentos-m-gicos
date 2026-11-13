@@ -158,8 +158,8 @@ def banana_tree(c, t, has_bunch):
         c.move_to(10, 0); c.line_to(270, 0); c.stroke(); c.restore()
     if has_bunch:
         c.set_source_rgba(*hexc('#558B2F')); c.set_line_width(8)
-        c.move_to(x - 20, y - 330); c.line_to(x - 60, y - 255); c.stroke()
-        K.bunch(c, x - 60, y - 255, 0.85)
+        c.move_to(x - 20, y - 330); c.line_to(x - 70, y - 250); c.stroke()
+        K.bunch(c, x - 70, y - 250, 1.3)
         if 9 < t < 16:
             for k in range(3):
                 ph = (t * 1.2 + k / 3) % 1
@@ -180,7 +180,7 @@ def thought(c, x, y, p):
         for (cx, cy, r) in ((-60, 0, 55), (0, -25, 65), (60, 0, 55), (0, 25, 55)):
             ellipse(c, cx, cy, r, r)
         c.fill()
-        K.bunch(c, 0, -40, 0.75)
+        K.bunch(c, 0, -45, 0.95)
         c.restore()
 
 def bulb(c, x, y, p, t):
@@ -385,7 +385,7 @@ def world(c, t):
             elif who == 'lola': ex, ey = 560, 560 - 60
             else: ex, ey = tx + 50, GROUND - 60
             bx, by = sx + (ex - sx) * p, sy + (ey - sy) * p - 160 * math.sin(math.pi * p)
-            K.banana(c, bx, by, 0.6, p * 8)
+            K.banana(c, bx, by, 1.0, p * 8)
         if 0.95 < p < 1.6:
             q = (p - 0.95) / 0.65
             ex2 = {'tito': ttx + 110, 'pipa': px + 20, 'lola': 560, 'tomi': tx + 50}[who]

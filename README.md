@@ -23,6 +23,8 @@ Canal infantil de YouTube con historias cortitas de animales de la selva: Coco, 
 8. **El arcoíris perdido** — 1 min 58 s con intro (`codigo/ep08_arcoiris_perdido.py`). El arcoíris pierde sus colores y cada amigo encuentra uno. *Para aprender los colores.*
 9. **La semilla mágica** — 1 min 58 s con intro (`codigo/ep09_semilla_magica.py`). Plantan una semilla entre todos y crece un árbol mágico. Guion de voz en off y subtítulos en `guiones/`.
 10. **Cruzando el bosque** — 1 min 58 s con intro (`codigo/ep10_cruzando_el_bosque.py`). Caminata hasta la cascada con escenario que se desplaza. Guion y subtítulos en `guiones/`.
+11. **La pelota perdida** — 1 min 56 s con intro (`codigo/ep11_pelota_perdida.py`). Persiguen la pelota: Tomi es piedrita en el arroyo, Pipa la baja del árbol y Tito la saca de la laguna.
+12. **Las burbujas mágicas** — 1 min 56 s con intro (`codigo/ep12_burbujas_magicas.py`). Una flor hace burbujas que cambian de color a los amigos, le dan alitas a Tomi y hacen volar a Coco.
 
 ## Cómo seguir en un chat nuevo con Claude
 Pedile que trabaje con este repositorio (GR2206/Cuentos-m-gicos). El archivo `CLAUDE.md` le explica el estilo y los personajes, así todo sale igual.

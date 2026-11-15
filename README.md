@@ -21,6 +21,8 @@ Canal infantil de YouTube con historias cortitas de animales de la selva: Coco, 
 6. **Tito se va a dormir** — 1 min 5 s con intro (el MP4 largo no está en GitHub: se genera con `codigo/ep06_tito_a_dormir.py`). Tito bosteza, Lola le canta y se duermen bajo una hoja. *Para la lista "A dormir con…"*
 7. **La estrella que se cayó** — 1 min 45 s con intro (`codigo/ep07_estrella.py`). Una estrellita bebé se cae a la selva; todos intentan devolverla y Lola la lleva volando. Agradece con un corazón de estrellas. *Para "A dormir con…"*
 8. **El arcoíris perdido** — 1 min 58 s con intro (`codigo/ep08_arcoiris_perdido.py`). El arcoíris pierde sus colores y cada amigo encuentra uno. *Para aprender los colores.*
+9. **La semilla mágica** — 1 min 58 s con intro (`codigo/ep09_semilla_magica.py`). Plantan una semilla entre todos y crece un árbol mágico. Guion de voz en off y subtítulos en `guiones/`.
+10. **Cruzando el bosque** — 1 min 58 s con intro (`codigo/ep10_cruzando_el_bosque.py`). Caminata hasta la cascada con escenario que se desplaza. Guion y subtítulos en `guiones/`.
 
 ## Cómo seguir en un chat nuevo con Claude
 Pedile que trabaje con este repositorio (GR2206/Cuentos-m-gicos). El archivo `CLAUDE.md` le explica el estilo y los personajes, así todo sale igual.

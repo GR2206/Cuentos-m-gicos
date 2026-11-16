@@ -286,3 +286,33 @@ def papa(c, **kw):
         c.move_to(2, 44); c.curve_to(20, 32, 55, 34, 62, 52); c.curve_to(48, 50, 40, 58, 30, 56); c.curve_to(18, 54, 8, 56, 2, 50)
         c.close_path(); fill(c, hexc('#3E2312'), OUT, 3); c.restore()
     c.restore()
+
+# ---------------- Mamá Coco ----------------
+MAMA_BROWN = hexc('#B5653A')
+def mama(c, **kw):
+    """Mamá Coco: cuerpo de Coco en marrón claro, flor en la cabeza, pestañas y collar. Escala ~0.72."""
+    global BROWN
+    old = BROWN; BROWN = MAMA_BROWN
+    try:
+        coco(c, **kw)
+    finally:
+        BROWN = old
+    tilt = kw.get('head_tilt', 0.0); lid = kw.get('lid', 0.0)
+    for k in range(7):  # collar de perlas
+        a = math.pi * (0.25 + 0.5 * k / 6)
+        ellipse(c, 70 * math.cos(a), -205 + 30 * math.sin(a), 11, 11); fill(c, hexc('#FFFFFF'), OUT, 3)
+    c.save(); c.translate(0, -245); c.rotate(tilt); c.translate(0, -90)
+    if lid < 0.9:
+        c.set_source_rgba(*OUT); c.set_line_width(6); c.set_line_cap(cairo.LINE_CAP_ROUND)
+        for side in (-1, 1):
+            for k in range(3):
+                a = -math.pi / 2 + side * (0.55 + 0.3 * k)
+                x0, y0 = side * 48 + 34 * math.cos(a), -15 + 42 * math.sin(a)
+                c.move_to(x0, y0); c.line_to(x0 + 16 * math.cos(a), y0 + 16 * math.sin(a)); c.stroke()
+    c.save(); c.translate(80, -110)  # flor
+    for i in range(5):
+        a = i * 2 * math.pi / 5
+        ellipse(c, 26 * math.cos(a), 26 * math.sin(a), 22, 22); fill(c, hexc('#FF4081'), OUT, 4)
+    ellipse(c, 0, 0, 16, 16); fill(c, hexc('#FFEB3B'), OUT, 4)
+    c.restore()
+    c.restore()

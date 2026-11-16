@@ -22,6 +22,7 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 | Tito | elefantito | grandote, tierno, tímido | `#8FB8E8` |
 | Pipa | jirafita | alta, ve todo desde arriba y avisa | `#FFCF40` |
 | Tomi | tortuguita | lenta y sabia, siempre llega | `#7CCB5B` |
+| Mamá Coco | mamá mona | dulce, flor rosa y collar de perlas (`K.mama`, escala 0.72–0.95) | `#B5653A` |
 | Papá Coco | papá mono | cariñoso, anteojos y bigote (`K.papa`, escala 0.72) | `#6E3B17` |
 
 ## Entregables de cada episodio

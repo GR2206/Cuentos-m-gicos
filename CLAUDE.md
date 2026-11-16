@@ -22,6 +22,7 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 | Tito | elefantito | grandote, tierno, tímido | `#8FB8E8` |
 | Pipa | jirafita | alta, ve todo desde arriba y avisa | `#FFCF40` |
 | Tomi | tortuguita | lenta y sabia, siempre llega | `#7CCB5B` |
+| Papá Coco | papá mono | cariñoso, anteojos y bigote (`K.papa`, escala 0.72) | `#6E3B17` |
 
 ## Entregables de cada episodio
 Los videos largos para YouTube (`videos/epXX_..._youtube.mp4`) NO se suben a GitHub (están en `.gitignore`, límite de 100 MB): se mandan a Gino y él los guarda en su PC o Google Drive. Sí se suben el código, los shorts y las miniaturas.

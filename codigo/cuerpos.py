@@ -264,3 +264,25 @@ SCALE = {'coco': 0.55, 'tito': 0.6, 'pipa': 0.55, 'tomi': 0.55, 'lola': 0.5}
 def put(c, fn, x, y, s, flip=False, rot=0.0, sq=1.0, **kw):
     c.save(); c.translate(x, y); c.rotate(rot); c.scale(s * (-1 if flip else 1) / sq, s * sq)
     r = fn(c, **kw); c.restore(); return r
+
+# ---------------- Papá Coco ----------------
+PAPA_BROWN = hexc('#6E3B17')
+def papa(c, **kw):
+    """Papá Coco: el cuerpo de Coco más oscuro, con anteojos y bigote. Usar con escala ~0.72."""
+    global BROWN
+    old = BROWN; BROWN = PAPA_BROWN
+    try:
+        coco(c, **kw)
+    finally:
+        BROWN = old
+    tilt = kw.get('head_tilt', 0.0)
+    c.save(); c.translate(0, -245); c.rotate(tilt); c.translate(0, -90)
+    for ex in (-48, 48):  # glasses
+        ellipse(c, ex, -15, 46, 48); c.set_source_rgba(*hexc('#263238')); c.set_line_width(8); c.stroke()
+        ellipse(c, ex - 14, -36, 10, 6); c.set_source_rgba(1, 1, 1, 0.5); c.fill()
+    c.move_to(-4, -18); c.curve_to(-1, -26, 1, -26, 4, -18); c.set_source_rgba(*hexc('#263238')); c.set_line_width(7); c.stroke()
+    for side in (-1, 1):  # mustache
+        c.save(); c.scale(side, 1)
+        c.move_to(2, 44); c.curve_to(20, 32, 55, 34, 62, 52); c.curve_to(48, 50, 40, 58, 30, 56); c.curve_to(18, 54, 8, 56, 2, 50)
+        c.close_path(); fill(c, hexc('#3E2312'), OUT, 3); c.restore()
+    c.restore()

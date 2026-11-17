@@ -29,6 +29,13 @@ Gino se describe como "medio novato": explicarle paso a paso lo que tenga que ha
 Los videos largos para YouTube (`videos/epXX_..._youtube.mp4`) NO se suben a GitHub (están en `.gitignore`, límite de 100 MB): se mandan a Gino y él los guarda en su PC o Google Drive. Sí se suben el código, los shorts y las miniaturas.
 Video para YouTube (intro + episodio), short vertical 1080×1920 de ≤60 s (`epXX_extras.py short`), miniatura 1280×720 (`epXX_extras.py miniatura`), y título/descripción/etiquetas.
 
+## Shorts (plantilla nueva, desde nov 2026 — `codigo/short_kit.py`)
+- SIN fundido de entrada: el conflicto/gancho y el título se ven completos desde el primer cuadro (`top_title(..., first=True)`).
+- 35–45 s; cortes rápidos; final que invite a volver a verlo.
+- Últimos 3 s: `end_card` (Coco saluda, botón ¡Suscribite! que se toca y campanita que suena).
+- Abajo siempre `logo_band`. Se publican de a uno, ~20:00 (pico 20:30–21 h).
+- Ejemplos: `short_verdura.py` (historia propia), `ep15_extras.py` / `ep16_extras.py` (montaje del episodio).
+
 ## Voz en off
 Desde el ep. 9 cada episodio tiene `NARRACION = [(inicio, fin, texto), ...]` (tiempos sin la intro) y `python3 epXX_....py srt 5.5` genera los subtítulos con la intro incluida. En el entorno de Claude no hay voz en español de buena calidad: Gino graba las frases (o las genera) y Claude las mezcla en su lugar, bajando la música debajo de la voz.
 

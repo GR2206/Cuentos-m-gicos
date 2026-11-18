@@ -5,7 +5,7 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 ## Shorts "Coco no quiere…" (problema que los papás conocen + final feliz)
 - [x] ¡Coco no quiere comer verdura! (short_verdura.py)
 - [ ] ¡Coco no quiere guardar los juguetes!
-- [ ] ¡Coco no se quiere ir a dormir!
+- [x] ¡Coco no se quiere ir a dormir! (short_dormir.py, Nochebuena)
 - [ ] ¡Coco no se quiere lavar los dientes!
 
 ## Navidad
@@ -14,3 +14,6 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 ## Recetas reales en familia (pasos reales, siempre lavarse las manos primero)
 - [ ] Pan casero
 - [x] Chipá (ep16)
+- [x] La carta de Coco (ep17)
+- [x] Galletitas navideñas con Papá Coco (ep18)
+- [ ] El regalo para Tomi (Navidad)

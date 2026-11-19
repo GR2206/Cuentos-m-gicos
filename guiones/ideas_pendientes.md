@@ -4,7 +4,7 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 
 ## Shorts "Coco no quiere…" (problema que los papás conocen + final feliz)
 - [x] ¡Coco no quiere comer verdura! (short_verdura.py)
-- [ ] ¡Coco no quiere guardar los juguetes!
+- [x] ¡Coco no quiere guardar los juguetes! (short_juguetes.py)
 - [x] ¡Coco no se quiere ir a dormir! (short_dormir.py, Nochebuena)
 - [ ] ¡Coco no se quiere lavar los dientes!
 
@@ -17,3 +17,5 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [x] La carta de Coco (ep17)
 - [x] Galletitas navideñas con Papá Coco (ep18)
 - [ ] El regalo para Tomi (Navidad)
+- [x] La luciérnaga perdida (ep19)
+- [x] El tesoro del bosque (ep20)

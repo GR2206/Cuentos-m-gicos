@@ -6,7 +6,7 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [x] ¡Coco no quiere comer verdura! (short_verdura.py)
 - [x] ¡Coco no quiere guardar los juguetes! (short_juguetes.py)
 - [x] ¡Coco no se quiere ir a dormir! (short_dormir.py, Nochebuena)
-- [ ] ¡Coco no se quiere lavar los dientes!
+- [x] ¡Coco no se quiere lavar los dientes! (short_dientes.py)
 
 ## Navidad
 - [x] Navidad en la selva (ep15)
@@ -19,3 +19,5 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [ ] El regalo para Tomi (Navidad)
 - [x] La luciérnaga perdida (ep19)
 - [x] El tesoro del bosque (ep20)
+- [x] La gran carrera del bosque (ep21)
+- [x] El huevo misterioso (ep22)

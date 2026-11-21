@@ -21,3 +21,4 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [x] El tesoro del bosque (ep20)
 - [x] La gran carrera del bosque (ep21)
 - [x] El huevo misterioso (ep22)
+- [x] La cueva del eco (ep23)

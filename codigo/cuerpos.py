@@ -175,7 +175,7 @@ def tito(c, t=0.0, look=(0, 0), reach=None, walk=0.0, hold=None, umbrella=0.0, l
 
 # ---------------- Pipa ----------------
 P_YEL, P_SPOT = hexc('#FFCF40'), hexc('#F08A24')
-def pipa(c, t=0.0, look=(0, 0), neck=300, lean=0.0, walk=0.0, hold=None):
+def pipa(c, t=0.0, look=(0, 0), neck=300, lean=0.0, walk=0.0, hold=None, lid=0.0):
     for k, (lx, front) in enumerate(((-80, 0), (80, 0), (-35, 1), (35, 1))):
         lift = max(0.0, math.sin(walk + k * math.pi / 2)) * 14 if walk else 0
         c.set_line_cap(cairo.LINE_CAP_ROUND)
@@ -198,7 +198,8 @@ def pipa(c, t=0.0, look=(0, 0), neck=300, lean=0.0, walk=0.0, hold=None):
         px = 3 * (1 - u) * u * u * hx * 0.7 + u ** 3 * hx
         py = (1 - u) ** 3 * -250 + 3 * (1 - u) ** 2 * u * (-250 - neck * 0.5) + 3 * (1 - u) * u * u * (hy + neck * 0.3) + u ** 3 * (hy + 60)
         ellipse(c, px + (8 if k % 2 else -8), py, 12, 10); c.set_source_rgba(*P_SPOT); c.fill()
-    c.save(); c.translate(hx, hy); c.scale(0.85, 0.85); A.pipa(c, look); c.restore()
+    c.save(); c.translate(hx, hy); c.scale(0.85, 0.85); A.pipa(c, look)
+    lids(c, [(-48, -30, 30, 38), (48, -30, 30, 38)], lid, hexc('#FFCF40')); c.restore()
     if hold == 'banana': banana(c, hx + 30, hy + 120, 1.6, 0.3)
     return hx, hy
 

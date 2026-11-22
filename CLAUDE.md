@@ -38,6 +38,7 @@ Video para YouTube (intro + episodio), short vertical 1080×1920 de ≤60 s (`ep
 
 ## Voz en off
 Desde el ep. 9 cada episodio tiene `NARRACION = [(inicio, fin, texto), ...]` (tiempos sin la intro) y `python3 epXX_....py srt 5.5` genera los subtítulos con la intro incluida. En el entorno de Claude no hay voz en español de buena calidad: Gino graba las frases (o las genera) y Claude las mezcla en su lugar, bajando la música debajo de la voz.
+- Voz elegida del canal (desde el ep. 24): **Malena — Tango, Storyteller** de ElevenLabs. Gino genera un solo audio por episodio con todas las frases del guion; Claude corta las frases por las pausas, las ubica en los tiempos de `NARRACION` y baja la música (curva de volumen + sidechain) hasta que la voz quede ≥12 dB arriba. Salida: `videos/epXX_..._narrado_youtube.mp4` (video con `-c:v copy`).
 
 ## Recopilaciones
 Intro + los `story.mp4` de cada episodio (todos con el mismo formato) + `cierre.mp4` (`codigo/recopilacion.py cierre`, con `intro_music.wav`). Se unen con el concat de ffmpeg y `-c copy` (segundos); recodificar 17 min tarda demasiado. Orden en `guiones/recopilacion_orden.txt`.

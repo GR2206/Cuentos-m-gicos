@@ -24,3 +24,5 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [x] La cueva del eco (ep23)
 - [x] El barrilete perdido (ep24)
 - [x] Una noche estrellada en la selva (ep25)
+- [x] El concierto de la selva (ep26)
+- [x] Short ¿Adivinás quién es? (siluetas)

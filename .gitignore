@@ -2,3 +2,7 @@ __pycache__/
 *.wav
 codigo/*.png
 codigo/*.mp4
+
+# Especiales 3D: los videos van a la PC o a Drive, no al repo
+especiales-3d/**/*.mp4
+especiales-3d/**/*.mov

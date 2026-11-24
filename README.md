@@ -10,6 +10,7 @@ Canal infantil de YouTube con historias cortitas de animales de la selva: Coco, 
 | `videos/` | Videos terminados: intro del canal y episodios. `pruebas/` tiene las primeras versiones. |
 | `imagenes/` | Logo de perfil (1024×1024), banner del canal (2560×1440) y ficha de personajes. |
 | `codigo/` | Todo lo que dibuja y anima: personajes, escenarios, música, intro y episodios. |
+| `especiales-3d/` | Serie especial en 3D (Google Flow): hojas de personajes, prompts y guiones. Los videos van a la PC/Drive. |
 | `fuentes/` | Tipografía de los títulos (Fredoka, licencia libre OFL). |
 
 ## Episodios

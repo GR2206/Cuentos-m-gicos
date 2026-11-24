@@ -43,8 +43,8 @@ por eso en los prompts Coco va siempre centrado).
 | Personaje | Hoja 3D | Altura relativa (para escenas juntos) |
 |---|---|---|
 | Coco el monito | ✅ `coco/coco-hoja-3d.jpg` | 1 (referencia) |
-| Lola la lorita | ⬜ prompt listo | 0,6 de Coco |
-| Tito el elefantito | ⬜ prompt listo | 1,4 de Coco |
-| Pipa la jirafita | ⬜ prompt listo | 2 de Coco (cuello largo) |
-| Tomi la tortuguita | ⬜ prompt listo | 0,8 de Coco |
+| Lola la lorita | ⬜ 2D + prompt listos | 0,6 de Coco |
+| Tito el elefantito | ⬜ 2D + prompt listos | 1,4 de Coco |
+| Pipa la jirafita | ⬜ 2D + prompt listos | 2 de Coco (cuello largo) |
+| Tomi la tortuguita | ⬜ 2D + prompt listos | 0,8 de Coco |
 | Papá Coco / Mamá Coco | ⬜ más adelante | 1,6 de Coco |

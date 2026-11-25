@@ -28,3 +28,4 @@ Regla: subir de a un short por vez; no publicar otro mientras uno está arrancan
 - [x] Short ¿Adivinás quién es? (siluetas)
 - [x] El desayuno de los amigos (ep27)
 - [x] La oruguita Mari (ep28)
+- [x] Short ¡La travesura de Coco! (short_travesura.py)

@@ -5,7 +5,7 @@ Accesorio: collar de perlas chiquitas en la base del cuello (elegido por Gino).
 
 - `pipa-cuerpo-2d.png` → **cuerpo entero 2D plano** (de `codigo/cuerpos.py`, con la cara oficial de `amigos.py`): la referencia de diseño para el 3D.
 - `pipa-cara-2d-oficial.png` → solo la cara, por si hace falta un primer plano.
-- `pipa-hoja-3d.jpg` → **falta**: cuando la generes, guardala con este nombre en esta carpeta.
+- `pipa-hoja-3d.jpg` → ✅ **ingrediente para Flow** (generada el 24/11/2026).
 
 ## Cómo generar la hoja 3D (paso a paso)
 1. En Flow elegí crear **imagen** (o usá la app de Gemini si Flow te cobra créditos por imágenes).

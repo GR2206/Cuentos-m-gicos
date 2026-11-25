@@ -45,6 +45,6 @@ por eso en los prompts Coco va siempre centrado).
 | Coco el monito | ✅ `coco/coco-hoja-3d.jpg` | 1 (referencia) |
 | Lola la lorita | ✅ `lola/lola-hoja-3d.jpg` | 0,6 de Coco |
 | Tito el elefantito | ✅ `tito/tito-hoja-3d.jpg` | 1,4 de Coco |
-| Pipa la jirafita | ⬜ 2D + prompt listos | 2 de Coco (cuello largo) |
+| Pipa la jirafita | ✅ `pipa/pipa-hoja-3d.jpg` | 2 de Coco (cuello largo) |
 | Tomi la tortuguita | ✅ `tomi/tomi-hoja-3d.jpg` | 0,8 de Coco |
 | Papá Coco / Mamá Coco | ⬜ más adelante | 1,6 de Coco |

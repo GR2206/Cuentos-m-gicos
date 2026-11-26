@@ -6,3 +6,4 @@ codigo/*.mp4
 # Videos largos para YouTube: no se guardan en GitHub (límite de 100 MB).
 # Se vuelven a generar con el código; Gino guarda los MP4 en su PC o en Google Drive.
 videos/ep*_youtube.mp4
+videos/recopilacion_*.mp4

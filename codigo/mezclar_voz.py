@@ -1,7 +1,7 @@
 """Pone la voz en off (un solo audio con todas las frases del guion, p. ej. de ElevenLabs) sobre un episodio terminado.
 
 Uso:  python3 mezclar_voz.py ep26_concierto voz.mp3 ../videos/ep26_concierto_youtube.mp4 ../videos/ep26_concierto_narrado_youtube.mp4
-      (agregar --ver para solo mostrar cómo cortó las frases, sin mezclar)
+      (agregar --ver para solo mostrar cómo cortó las frases, sin mezclar; --intro 0 si el video no tiene intro)
 
 1. Busca las pausas del audio y elige los cortes que mejor coinciden con el largo de cada frase de NARRACION.
 2. Ubica cada frase en su momento (NARRACION + 5.5 s de intro); si una frase larga se pisa con la siguiente, corre la siguiente.
@@ -76,6 +76,7 @@ def mix(voice_path, segs, at, video_in, video_out):
 
 if __name__ == '__main__':
     ep, voice, vin, vout = sys.argv[1:5]
+    if '--intro' in sys.argv: INTRO = float(sys.argv[sys.argv.index('--intro') + 1])
     narr = importlib.import_module(ep).NARRACION
     voz = load_mono(voice)
     segs, exp = split_phrases(voz, [t for _, _, t in narr])
